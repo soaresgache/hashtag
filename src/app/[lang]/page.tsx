@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { getDict, isLocale, type Locale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
@@ -62,28 +63,18 @@ export default async function HomePage({
             </div>
           </div>
 
-          {/* Decorative card cluster */}
-          <div className="relative hidden lg:block">
-            <div className="absolute right-0 top-4 w-72 rounded-2xl border border-ink/10 bg-white p-6 shadow-xl shadow-brand-900/5">
-              <div className="text-xs font-semibold uppercase tracking-wider text-brand-600">Estrategia</div>
-              <div className="mt-3 h-2 w-3/4 rounded-full bg-brand-100" />
-              <div className="mt-2 h-2 w-1/2 rounded-full bg-ink/10" />
-              <div className="mt-5 flex items-end gap-1.5">
-                {[40, 64, 52, 80, 96].map((h, i) => (
-                  <div key={i} className="w-6 rounded-t bg-gradient-to-t from-brand-500 to-accent" style={{ height: h }} />
-                ))}
-              </div>
-            </div>
-            <div className="absolute right-40 top-48 w-60 rounded-2xl border border-ink/10 bg-ink p-6 text-white shadow-xl">
-              <div className="text-xs font-semibold uppercase tracking-wider text-accent">Procesos</div>
-              <div className="mt-4 space-y-3">
-                {[1, 2, 3].map((n) => (
-                  <div key={n} className="flex items-center gap-3">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/10 text-xs">{n}</span>
-                    <span className="h-1.5 flex-1 rounded-full bg-white/15" />
-                  </div>
-                ))}
-              </div>
+          {/* Hero image */}
+          <div className="relative animate-fade-up">
+            <div className="relative h-[320px] overflow-hidden rounded-3xl border border-ink/10 shadow-2xl shadow-brand-900/10 sm:h-[420px] lg:h-full lg:min-h-[520px]">
+              <Image
+                src="/strategy.jpg"
+                alt={t.hero.eyebrow}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-ink/35 via-ink/5 to-transparent" />
             </div>
           </div>
         </div>

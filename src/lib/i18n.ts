@@ -64,12 +64,12 @@ export const dictionaries: Record<Locale, Dict> = {
       titleAccent: "mueven el negocio.",
       subtitle:
         "Acompañamos a empresas que quieren decidir mejor, ejecutar más rápido y crecer con foco. Traducimos la estrategia en procesos concretos que el equipo puede llevar adelante.",
-      ctaPrimary: "Conversemos",
+      ctaPrimary: "Platiquemos",
       ctaSecondary: "Cómo trabajamos",
     },
     intro: {
       heading: "Cerramos la distancia entre la decisión y la ejecución.",
-      body: "Muchas organizaciones tienen claro a dónde quieren llegar, pero se traban en el cómo. Nuestro trabajo es ordenar esa brecha: un diagnóstico honesto, una estrategia priorizada y procesos que hacen que las cosas pasen.",
+      body: "Muchas organizaciones tienen claro a dónde quieren llegar, pero se atoran en el cómo. Nuestro trabajo es ordenar esa brecha: un diagnóstico honesto, una estrategia priorizada y procesos que hacen que las cosas pasen.",
       stats: [
         { value: "15+", label: "años de experiencia en gestión y operaciones" },
         { value: "360°", label: "mirada de negocio, procesos y tecnología" },
@@ -78,7 +78,7 @@ export const dictionaries: Record<Locale, Dict> = {
     },
     services: {
       heading: "En qué ayudamos",
-      subheading: "Dos frentes, una misma lógica: claridad estratégica y ejecución impecable.",
+      subheading: "Del diagnóstico a la ejecución: estrategia clara y la tecnología que la hace realidad.",
       items: [
         {
           title: "Estrategia de negocio",
@@ -90,21 +90,21 @@ export const dictionaries: Record<Locale, Dict> = {
           ],
         },
         {
-          title: "Optimización de procesos",
-          body: "Rediseñamos y automatizamos los procesos clave para ganar eficiencia, reducir errores y poder escalar sin caos.",
-          points: [
-            "Mapeo y rediseño de procesos",
-            "Automatización y mejora continua",
-            "Eficiencia operativa y reducción de costos",
-          ],
-        },
-        {
           title: "Diagnóstico y transformación",
           body: "Una lectura integral de cómo opera hoy la empresa y una hoja de ruta clara para llevarla al siguiente nivel.",
           points: [
             "Diagnóstico operativo integral",
             "Hoja de ruta de mejora",
             "Acompañamiento en la implementación",
+          ],
+        },
+        {
+          title: "Plataformas digitales y apps móviles",
+          body: "Diseñamos y desarrollamos plataformas digitales y aplicaciones móviles a la medida para ejecutar el diagnóstico y llevar la estrategia a la operación.",
+          points: [
+            "Aplicaciones móviles iOS y Android",
+            "Plataformas y software web a la medida",
+            "Integraciones y automatización",
           ],
         },
       ],
@@ -131,8 +131,8 @@ export const dictionaries: Record<Locale, Dict> = {
       ],
     },
     ctaBand: {
-      heading: "¿Hablamos de tu próximo paso?",
-      body: "Contanos en qué estás trabajando y vemos juntos cómo podemos ayudar.",
+      heading: "¿Platicamos sobre tu siguiente paso?",
+      body: "Cuéntanos en qué estás trabajando y vemos juntos cómo podemos ayudarte.",
       cta: "Ir a contacto",
     },
     footer: {
@@ -143,19 +143,19 @@ export const dictionaries: Record<Locale, Dict> = {
     },
     contact: {
       eyebrow: "Contacto",
-      heading: "Conversemos sobre tu negocio.",
-      body: "Completá el formulario y te respondemos a la brevedad. Contanos brevemente el contexto y qué estás buscando resolver.",
+      heading: "Platiquemos sobre tu negocio.",
+      body: "Llena el formulario y te respondemos pronto. Cuéntanos brevemente el contexto y qué buscas resolver.",
       form: {
         name: "Nombre",
-        email: "Email",
+        email: "Correo",
         company: "Empresa",
         message: "Mensaje",
         submit: "Enviar mensaje",
         sending: "Enviando…",
-        success: "¡Gracias! Recibimos tu mensaje y te responderemos pronto.",
-        error: "Hubo un problema al enviar. Probá de nuevo en unos minutos.",
+        success: "¡Gracias! Recibimos tu mensaje y te contactaremos pronto.",
+        error: "Hubo un problema al enviar. Inténtalo de nuevo en unos minutos.",
         required: "Este campo es obligatorio.",
-        invalidEmail: "Ingresá un email válido.",
+        invalidEmail: "Ingresa un correo válido.",
         optional: "Opcional",
       },
       sidebar: {
@@ -195,7 +195,7 @@ export const dictionaries: Record<Locale, Dict> = {
     },
     services: {
       heading: "How we help",
-      subheading: "Two fronts, one logic: strategic clarity and flawless execution.",
+      subheading: "From diagnosis to execution: clear strategy and the technology to make it real.",
       items: [
         {
           title: "Business strategy",
@@ -207,21 +207,21 @@ export const dictionaries: Record<Locale, Dict> = {
           ],
         },
         {
-          title: "Process optimization",
-          body: "We redesign and automate key processes to gain efficiency, reduce errors and scale without chaos.",
-          points: [
-            "Process mapping and redesign",
-            "Automation and continuous improvement",
-            "Operational efficiency and cost reduction",
-          ],
-        },
-        {
           title: "Diagnosis and transformation",
           body: "A holistic read of how the company operates today and a clear roadmap to take it to the next level.",
           points: [
             "End-to-end operational diagnosis",
             "Improvement roadmap",
             "Hands-on implementation support",
+          ],
+        },
+        {
+          title: "Digital platforms & mobile apps",
+          body: "We design and build custom digital platforms and mobile apps to execute the diagnosis and bring the strategy into day-to-day operations.",
+          points: [
+            "iOS and Android mobile apps",
+            "Custom web platforms and software",
+            "Integrations and automation",
           ],
         },
       ],

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { getDict, type Locale } from "@/lib/i18n";
 
 type Status = "idle" | "sending" | "success" | "error";
@@ -9,6 +9,9 @@ export function ContactForm({ locale }: { locale: Locale }) {
   const f = getDict(locale).contact.form;
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
+  // Timestamp del primer render — el server chequea que hayan pasado
+  // al menos 3s entre esto y el submit. Los bots submitean instantáneo.
+  const loadedAtRef = useRef<number>(Date.now());
 
   function validate(data: FormData): Record<string, string> {
     const next: Record<string, string> = {};
@@ -42,6 +45,8 @@ export function ContactForm({ locale }: { locale: Locale }) {
           company: data.get("company"),
           message: data.get("message"),
           locale,
+          website: data.get("website"),
+          loadedAt: loadedAtRef.current,
         }),
       });
       if (!res.ok) throw new Error("request failed");
@@ -70,6 +75,33 @@ export function ContactForm({ locale }: { locale: Locale }) {
 
   return (
     <form onSubmit={onSubmit} noValidate className="space-y-5">
+      {/* Honeypot invisible: los bots llenan todos los inputs; los humanos
+          no lo ven. Si viene con valor, el server lo trata como spam.
+          aria-hidden + tabIndex -1 evita que un screenreader o teclado
+          lo alcance por accidente. */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          left: "-10000px",
+          top: "auto",
+          width: "1px",
+          height: "1px",
+          overflow: "hidden",
+        }}
+      >
+        <label>
+          No llenes este campo
+          <input
+            type="text"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            defaultValue=""
+          />
+        </label>
+      </div>
+
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label={f.name} error={errors.name}>
           <input name="name" type="text" autoComplete="name" className={inputClass} />
